@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B0F19" />
+
+  <title>10xSensai — Master AI. Multiply Your Potential.</title>
+  <meta
+    name="description"
+    content="Unlock your potential with 10xSensai. Discover AI-powered learning, expert guidance, and practical tools designed to help you achieve more."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0B0F19",
+            panel: "#111827",
+            cyan: "#ff6b1a",
+            muted: "#94A3B8",
+          },
+          fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(0, 242, 254, 0.12)",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: #0b0f19;
+      color: #fff;
+      font-family: "DM Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .hero-glow {
+      background:
+        radial-gradient(ellipse at 50% 45%, rgba(0, 242, 254, .13), transparent 45%),
+        radial-gradient(ellipse at 85% 70%, rgba(99, 102, 241, .10), transparent 35%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #fff 15%, #ff6b1a 75%, #a5f3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .gradient-border {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 242, 254, .4),
+        rgba(148, 163, 184, .08),
+        rgba(99, 102, 241, .25)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .card-hover {
+      transition: transform .25s ease, background-color .25s ease,
+        border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      background-color: rgba(17, 24, 39, .95);
+      border-color: rgba(0, 242, 254, .35);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .16);
+    }
+
+    .orb {
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .faq-answer[hidden] {
+      display: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #ff6b1a;
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-ink/90 backdrop-blur-xl">
+    <nav
+      class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+      aria-label="Main navigation"
+    >
+      <a href="#home" class="brand flex items-center gap-2.5" aria-label="10xSensai home">
+        <svg
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect x="1" y="1" width="32" height="32" rx="10" stroke="#ff6b1a" stroke-opacity=".5"/>
+          <path d="M8 12.5L13 9V25" stroke="#ff6b1a" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 10H25V16M25 10L18.5 16.5M19 19L25 25M25 19H19V25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-xl font-bold tracking-tight">10xSensai<span class="text-cyan">.</span></span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#features" class="text-sm text-slate-300 transition hover:text-cyan">Features</a>
+        <a href="#about" class="text-sm text-slate-300 transition hover:text-cyan">About</a>
+        <a href="#access" class="text-sm text-slate-300 transition hover:text-cyan">Access</a>
+        <a href="#faq" class="text-sm text-slate-300 transition hover:text-cyan">FAQ</a>
+      </div>
+
+      <a
+        href="https://10xsensai.xyz/signup.html"
+        class="hidden items-center gap-2 rounded-lg bg-cyan px-5 py-2.5 text-sm font-bold text-ink transition hover:bg-white md:inline-flex"
+      >
+        Get Started <span aria-hidden="true">↗</span>
+      </a>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 text-white transition hover:bg-white/5 md:hidden"
+        aria-label="Open navigation menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-white/[0.06] bg-ink px-5 py-5 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-1">
+        <a href="#features" class="rounded-lg px-3 py-3 text-slate-300 hover:bg-white/5 hover:text-cyan">Features</a>
+        <a href="#about" class="rounded-lg px-3 py-3 text-slate-300 hover:bg-white/5 hover:text-cyan">About</a>
+        <a href="#access" class="rounded-lg px-3 py-3 text-slate-300 hover:bg-white/5 hover:text-cyan">Access</a>
+        <a href="#faq" class="rounded-lg px-3 py-3 text-slate-300 hover:bg-white/5 hover:text-cyan">FAQ</a>
+        <a href="https://10xsensai.xyz/signup.html" class="mt-3 rounded-lg bg-cyan px-4 py-3 text-center font-bold text-ink">Get Started ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative flex min-h-screen items-center overflow-hidden pt-28 sm:pt-32">
+      <div class="grid-bg pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="hero-glow pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-12 lg:py-20">
+        <div class="max-w-2xl">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/[0.06] px-3.5 py-2">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-50"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-cyan"></span>
+            </span>
+            <span class="text-xs font-semibold tracking-wide text-cyan sm:text-sm">YOUR NEXT LEVEL STARTS HERE</span>
+          </div>
+
+          <h1 class="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            Think bigger.
+            <br />
+            Work smarter.
+            <br />
+            <span class="gradient-text">Go 10x further.</span>
+          </h1>
+
+          <p class="mt-7 max-w-xl text-base leading-8 text-slate-400 sm:text-lg">
+            Turn ambition into execution with AI-powered insights, practical tools,
+            and a smarter approach to mastering what matters.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="https://10xsensai.xyz/signup.html"
+              class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-cyan px-7 py-4 font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Get Started <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="#features"
+              class="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-white/10 px-7 py-4 font-semibold text-white transition hover:border-cyan/40 hover:bg-white/[0.04]"
+            >
+              Explore the platform <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
+            <span class="flex items-center gap-2">
+              <svg class="text-cyan" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              Built for ambitious minds
+            </span>
+            <span class="flex items-center gap-2">
+              <svg class="text-cyan" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+              Focused on real progress
+            </span>
+          </div>
+        </div>
+
+        <!-- CSS/SVG dashboard illustration -->
+        <div class="relative mx-auto w-full max-w-xl lg:ml-auto">
+          <div class="orb pointer-events-none absolute -inset-6 rounded-full bg-cyan/[0.07] blur-3xl" aria-hidden="true"></div>
+
+          <div class="gradient-border relative overflow-hidden rounded-2xl border border-white/10 bg-[#0D1421]/95 p-4 shadow-2xl sm:p-6">
+            <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
+                  <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                    <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/>
+                    <circle cx="12" cy="12" r="5"/>
+                    <circle cx="12" cy="12" r="2"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-bold">Your AI Workspace</p>
+                  <p class="mt-0.5 text-xs text-slate-500">A smarter way to move forward</p>
+                </div>
+              </div>
+              <span class="rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs text-cyan">AI-powered</span>
+            </div>
+
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/[0.07] bg-white/[0.025] p-4">
+                <div class="mb-4 flex items-center justify-between">
+                  <span class="text-xs text-slate-400">Your direction</span>
+                  <span class="text-cyan">↗</span>
+                </div>
+                <div class="text-xl font-bold sm:text-2xl">Think clearly</div>
+                <p class="mt-2 text-xs leading-5 text-slate-500">Turn complex ideas into actionable plans.</p>
+              </div>
+              <div class="rounded-xl border border-white/[0.07] bg-white/[0.025] p-4">
+                <div class="mb-4 flex items-center justify-between">
+                  <span class="text-xs text-slate-400">Your momentum</span>
+                  <span class="text-cyan">✳</span>
+                </div>
+                <div class="text-xl font-bold sm:text-2xl">Move faster</div>
+                <p class="mt-2 text-xs leading-5 text-slate-500">Make your next steps more intentional.</p>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 sm:p-5">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold">The next-level mindset</p>
+                  <p class="mt-1 text-xs text-slate-500">Clarity · Strategy · Execution</p>
+                </div>
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+                  <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                    <path d="M4 18V6m0 12h16M7 14l4-4 3 3 5-6"/>
+                    <path d="M15 7h4v4"/>
+                  </svg>
+                </div>
+              </div>
+              <svg class="mt-5 w-full" viewBox="0 0 440 105" role="img" aria-label="Illustrative rising progress curve">
+                <defs>
+                  <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ff6b1a" stop-opacity=".22"/>
+                    <stop offset="100%" stop-color="#ff6b1a" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 85 C40 80 55 63 90 70 S145 76 175 49 S225 62 260 39 S320 46 350 20 S400 25 440 6 L440 105 L0 105Z" fill="url(#areaFill)"/>
+                <path d="M0 85 C40 80 55 63 90 70 S145 76 175 49 S225 62 260 39 S320 46 350 20 S400 25 440 6" stroke="#ff6b1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="350" cy="20" r="4" fill="#ff6b1a"/>
+                <circle cx="350" cy="20" r="9" stroke="#ff6b1a" stroke-opacity=".3" fill="none"/>
+              </svg>
+              <p class="mt-2 text-xs text-slate-500">A visual metaphor for progress, not measured performance data.</p>
+            </div>
+
+            <div class="mt-4 flex items-center gap-3 rounded-xl border border-cyan/15 bg-cyan/[0.04] p-4">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-cyan">✦</div>
+              <div>
+                <p class="text-sm font-semibold">Make your next move count.</p>
+                <p class="mt-1 text-xs text-slate-400">Bring your ambition. Build with intention.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pointer-events-none absolute -right-3 top-16 hidden rounded-xl border border-white/10 bg-panel p-3 shadow-xl sm:block" aria-hidden="true">
+            <span class="text-lg text-cyan">✳</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand positioning -->
+    <section class="border-y border-white/[0.06] bg-white/[0.015]">
+      <div class="mx-auto max-w-7xl px-5 py-8 sm:px-8">
+        <p class="text-center text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+          Designed around the way ambitious people work
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-5 text-center sm:grid-cols-4">
+          <div class="text-sm font-semibold text-slate-300">Intelligent Thinking</div>
+          <div class="text-sm font-semibold text-slate-300">Strategic Focus</div>
+          <div class="text-sm font-semibold text-slate-300">Practical Execution</div>
+          <div class="text-sm font-semibold text-slate-300">Continuous Growth</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="relative py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="text-xs font-bold uppercase tracking-[0.22em] text-cyan">The 10x advantage</span>
+          <h2 class="mt-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            More than tools.
+            <span class="gradient-text">A better way forward.</span>
+          </h2>
+          <p class="mt-5 leading-7 text-slate-400">
+            A modern approach to thinking, creating, and getting things done.
+            Spend less energy feeling stuck and more energy making meaningful progress.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/><circle cx="12" cy="12" r="5"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">AI-powered thinking</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Explore ideas, organize your thoughts, and approach difficult challenges with a clearer perspective.
+            </p>
+          </article>
+
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="m9 8 2 2 4-4"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Learn with intention</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Focus on useful knowledge, build understanding, and turn new concepts into practical skills.
+            </p>
+          </article>
+
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Work with more focus</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Prioritize what matters, reduce unnecessary complexity, and make better use of your time.
+            </p>
+          </article>
+
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Build better systems</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Develop repeatable ways to approach your work instead of relying on motivation alone.
+            </p>
+          </article>
+
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Make progress visible</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Break ambitious goals into manageable steps and keep your attention on forward movement.
+            </p>
+          </article>
+
+          <article class="card-hover rounded-2xl border border-white/[0.08] bg-white/[0.02] p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/[0.07] text-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Think beyond limits</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-400">
+              Challenge familiar approaches, experiment with new possibilities, and keep improving your craft.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / How it works -->
+    <section id="about" class="border-y border-white/[0.06] bg-[#0D1320] py-24 sm:py-32">
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:items-center lg:gap-20">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] text-cyan">The philosophy</span>
+          <h2 class="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+            AI is the advantage.
+            <br />
+            <span class="gradient-text">You are the force.</span>
+          </h2>
+          <p class="mt-6 leading-8 text-slate-400">
+            The future belongs to people who know how to combine human judgment
+            with intelligent technology. 10xSensai is built around that idea:
+            helping you approach your goals with greater clarity, confidence, and purpose.
+          </p>
+          <a href="https://10xsensai.xyz/signup.html" class="mt-8 inline-flex items-center gap-2 font-semibold text-cyan transition hover:text-white">
+            Start your journey <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          <article class="gradient-border rounded-2xl bg-ink p-6 sm:p-7">
+            <div class="flex gap-5">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan/10 font-display text-lg font-bold text-cyan">01</div>
+              <div>
+                <h3 class="text-lg font-bold">Define your direction</h3>
+                <p class="mt-2 text-sm leading-7 text-slate-400">Start with the problem you want to solve or the capability you want to develop.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="gradient-border rounded-2xl bg-ink p-6 sm:p-7">
+            <div class="flex gap-5">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan/10 font-display text-lg font-bold text-cyan">02</div>
+              <div>
+                <h3 class="text-lg font-bold">Use intelligence strategically</h3>
+                <p class="mt-2 text-sm leading-7 text-slate-400">Bring AI and structured thinking into your process to explore options and develop a plan.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="gradient-border rounded-2xl bg-ink p-6 sm:p-7">
+            <div class="flex gap-5">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan/10 font-display text-lg font-bold text-cyan">03</div>
+              <div>
+                <h3 class="text-lg font-bold">Execute. Learn. Improve.</h3>
+                <p class="mt-2 text-sm leading-7 text-slate-400">Apply what you learn, review your results, and keep refining your approach.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access / CTA -->
+    <section id="access" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="relative overflow-hidden rounded-3xl border border-cyan/20 bg-gradient-to-br from-cyan/[0.12] via-[#111827] to-indigo-500/[0.10] px-6 py-14 text-center sm:px-12 sm:py-20">
+          <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,242,254,0.10),transparent_60%)]" aria-hidden="true"></div>
+
+          <div class="relative mx-auto max-w-3xl">
+            <span class="inline-flex rounded-full border border-cyan/20 bg-ink/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan">
+              Your next chapter
+            </span>
+            <h2 class="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-6xl">
+              Stop waiting for the right moment.
+              <span class="gradient-text">Create it.</span>
+            </h2>
+            <p class="mx-auto mt-6 max-w-xl leading-8 text-slate-300">
+              Take the first step toward a smarter way of working, learning, and achieving your goals.
+            </p>
+            <a
+              href="https://10xsensai.xyz/signup.html"
+              class="mt-9 inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-cyan px-8 py-4 font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Get Started with 10xSensai <span aria-hidden="true">↗</span>
+            </a>
+            <p class="mt-4 text-xs text-slate-400">Create your account to get started.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="border-t border-white/[0.06] py-24 sm:py-28">
+      <div class="mx-auto max-w-3xl px-5 sm:px-8">
+        <div class="text-center">
+          <span class="text-xs font-bold uppercase tracking-[0.22em] text-cyan">Questions, answered</span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked questions</h2>
+          <p class="mt-4 text-slate-400">A few things you might want to know.</p>
+        </div>
+
+        <div class="mt-10 divide-y divide-white/[0.08] border-y border-white/[0.08]">
+          <article class="faq-item">
+            <h3>
+              <button class="faq-toggle flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-semibold" aria-expanded="false" aria-controls="faq-answer-1">
+                What is 10xSensai?
+                <span class="faq-plus text-xl text-cyan" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-1" class="faq-answer pb-5 text-sm leading-7 text-slate-400" hidden>
+              10xSensai is presented here as an AI-driven platform for smarter work, learning, and personal development. Customize this answer to reflect the platform's actual product features.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3>
+              <button class="faq-toggle flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-semibold" aria-expanded="false" aria-controls="faq-answer-2">
+                Who is the platform for?
+                <span class="faq-plus text-xl text-cyan" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-2" class="faq-answer pb-5 text-sm leading-7 text-slate-400" hidden>
+              It is positioned for ambitious professionals, creators, learners, and anyone interested in using AI more intentionally. Adjust this description to match your real target audience.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3>
+              <button class="faq-toggle flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-semibold" aria-expanded="false" aria-controls="faq-answer-3">
+                How do I get started?
+                <span class="faq-plus text-xl text-cyan" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-3" class="faq-answer pb-5 text-sm leading-7 text-slate-400" hidden>
+              Select any Get Started button to visit the registration page and create your account.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <h3>
+              <button class="faq-toggle flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-semibold" aria-expanded="false" aria-controls="faq-answer-4">
+                Is there a free plan?
+                <span class="faq-plus text-xl text-cyan" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-answer-4" class="faq-answer pb-5 text-sm leading-7 text-slate-400" hidden>
+              Pricing and access options have not been specified in this template. Add your verified plan details here before publishing.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/[0.08] bg-[#080B12]">
+    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div class="sm:col-span-2 lg:col-span-2">
+          <a href="#home" class="brand inline-flex items-center gap-2.5 text-xl font-bold" aria-label="10xSensai home">
+            <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="32" height="32" rx="10" stroke="#ff6b1a" stroke-opacity=".5"/>
+              <path d="M8 12.5L13 9V25" stroke="#ff6b1a" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 10H25V16M25 10L18.5 16.5M19 19L25 25M25 19H19V25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>10xSensai<span class="text-cyan">.</span></span>
+          </a>
+          <p class="mt-5 max-w-sm text-sm leading-7 text-slate-400">
+            Think beyond the ordinary. Use intelligence with intention.
+            Build better habits, stronger skills, and a smarter way forward.
+          </p>
+
+          <div class="mt-6 flex items-center gap-3" aria-label="Social media">
+            <!-- Replace placeholder URLs with official brand profiles when available. -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="10xSensai on Facebook" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-slate-400 transition hover:border-cyan/40 hover:bg-cyan/10 hover:text-cyan">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.9H7V13h2.7v8h3.7Z"/>
+              </svg>
+            </a>
+
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="10xSensai on Instagram" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-slate-400 transition hover:border-cyan/40 hover:bg-cyan/10 hover:text-cyan">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="10xSensai on LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-slate-400 transition hover:border-cyan/40 hover:bg-cyan/10 hover:text-cyan">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M5.2 3.5a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.6v11.5H3.4V9Zm5.8 0h3.5v1.6h.1c.5-.9 1.7-2 3.5-2 3.7 0 4.4 2.4 4.4 5.4v6.5h-3.6v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1v5.9H9.2V9Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold">Explore</h2>
+          <ul class="mt-5 space-y-3 text-sm text-slate-400">
+            <li><a href="#features" class="transition hover:text-cyan">Features</a></li>
+            <li><a href="#about" class="transition hover:text-cyan">About 10xSensai</a></li>
+            <li><a href="#access" class="transition hover:text-cyan">Get Started</a></li>
+            <li><a href="#faq" class="transition hover:text-cyan">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-bold">Get started</h2>
+          <p class="mt-5 text-sm leading-6 text-slate-400">Ready to take the next step?</p>
+          <a href="https://10xsensai.xyz/signup.html" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan transition hover:text-white">
+            Create your account <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-4 border-t border-white/[0.08] pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span id="current-year">2026</span> 10xSensai.xyz. All rights reserved.</p>
+        <p>Built for people who think bigger.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    function closeMenu() {
+      mobileMenu.classList.add("hidden");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+
+      mobileMenu.classList.toggle("hidden", isExpanded);
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      menuToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Open navigation menu" : "Close navigation menu"
+      );
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // FAQ accordion
+    const faqButtons = document.querySelectorAll(".faq-toggle");
+
+    faqButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        const answerId = button.getAttribute("aria-controls");
+        const answer = document.getElementById(answerId);
+        const icon = button.querySelector(".faq-plus");
+
+        button.setAttribute("aria-expanded", String(!isExpanded));
+        answer.hidden = isExpanded;
+        icon.textContent = isExpanded ? "+" : "−";
+
+        if (!isExpanded) {
+          faqButtons.forEach((otherButton) => {
+            if (otherButton === button) return;
+
+            otherButton.setAttribute("aria-expanded", "false");
+            document.getElementById(
+              otherButton.getAttribute("aria-controls")
+            ).hidden = true;
+
+            otherButton.querySelector(".faq-plus").textContent = "+";
+          });
+        }
+      });
+    });
+
+    // Keep the copyright year current.
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
